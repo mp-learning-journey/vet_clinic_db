@@ -87,3 +87,39 @@ FROM animals
 WHERE EXTRACT(YEAR FROM date_of_birth) 
 BETWEEN 1990 AND 2000 
 GROUP BY species;
+
+-- What animals belong to Melody Pond?
+SELECT name FROM animals A 
+  JOIN owners O ON A.owner_id = O.id 
+  WHERE full_name = 'Melody Pond';
+  
+-- List of all animals that are pokemon (their type is Pokemon).
+SELECT A.name FROM animals A 
+  JOIN species S ON A.species_id = S.id 
+  WHERE S.name = 'Pokemon';
+  
+-- List all owners and their animals, remember to include those that don't own any animal.
+SELECT full_name AS owner, A.name AS animal FROM owners O
+  LEFT JOIN animals A ON O.id = A.owner_id;
+  
+-- How many animals are there per species?
+SELECT S.name, COUNT(A.name) FROM species S 
+  JOIN animals A ON S.id = A.species_id
+  GROUP BY S.name;
+  
+-- List all Digimon owned by Jennifer Orwell.
+SELECT A.name FROM animals A 
+  JOIN owners O ON A.owner_id = O.id 
+  JOIN species S ON A.species_id = S.id 
+  WHERE O.full_name = 'Jennifer Orwell' AND S.name = 'Digimon';
+  
+-- List all animals owned by Dean Winchester that haven't tried to escape.
+SELECT name FROM animals
+  JOIN owners ON animals.owner_id = owners.id 
+  WHERE full_name = 'Dean Winchester' AND escape_attempts = 0;
+  
+-- Who owns the most animals?
+SELECT full_name, COUNT(name) AS counts FROM owners
+  LEFT JOIN animals ON animals.owner_id = owners.id
+  GROUP BY full_name
+  ORDER BY counts desc LIMIT 1;

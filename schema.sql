@@ -12,3 +12,24 @@ CREATE TABLE animals (
 
 ALTER TABLE animals
   ADD species VARCHAR;
+
+-- create table owners
+CREATE TABLE owners (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    full_name VARCHAR NOT NULL,
+    age INT DEFAULT 0,
+    PRIMARY KEY(id)
+);
+
+-- create table species
+CREATE TABLE species (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR NOT NULL,
+    PRIMARY KEY(id)
+);
+
+--  Remove column species, Add column species_id which is a foreign key referencing species table Add column owner_id which is a foreign key referencing the owners table
+ALTER TABLE animals
+  DROP species,
+  ADD species_id INT REFERENCES species(id),
+  ADD owner_id INT REFERENCES owners(id);
