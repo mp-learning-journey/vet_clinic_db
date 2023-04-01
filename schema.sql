@@ -33,3 +33,12 @@ ALTER TABLE animals
   DROP species,
   ADD species_id INT REFERENCES species(id),
   ADD owner_id INT REFERENCES owners(id);
+
+-- create vets table
+CREATE TABLE vets (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name varchar NOT NULL,
+    date_of_graduation date NOT NULL,
+    age INT DEFAULT 0,
+    PRIMARY KEY(id)
+);
