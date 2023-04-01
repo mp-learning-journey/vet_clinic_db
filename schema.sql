@@ -13,9 +13,15 @@ CREATE TABLE animals (
 ALTER TABLE animals
   ADD species VARCHAR;
 
--- create tables owners
+-- create table owners
 CREATE TABLE owners (
     id INT GENERATED ALWAYS AS IDENTITY,
     full_name VARCHAR NOT NULL,
     age INT DEFAULT 0,
+);
+
+-- create table species
+CREATE TABLE owners (
+    id INT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR NOT NULL,
 );
