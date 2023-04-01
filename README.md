@@ -52,14 +52,14 @@
 - **[create animals table]**
 - **[Add records to animal table]**
 - **[query animal table]**
+- **[aggregate operations]**
+- **[use of transactions]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
