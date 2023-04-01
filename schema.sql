@@ -42,3 +42,10 @@ CREATE TABLE vets (
     age INT DEFAULT 0,
     PRIMARY KEY(id)
 );
+
+-- create specializations table with many-to-many relationship between species and vets
+CREATE TABLE specializations(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  species INT REFERENCES species (id),
+  vets INT REFERENCES vets (id)
+);
