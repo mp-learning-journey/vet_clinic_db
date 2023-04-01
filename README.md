@@ -52,6 +52,8 @@
 - **[create animals table]**
 - **[Add records to animal table]**
 - **[query animal table]**
+- **[aggregate operations]**
+- **[use of transactions]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
