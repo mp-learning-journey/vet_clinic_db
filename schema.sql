@@ -49,3 +49,7 @@ CREATE TABLE specializations(
   species INT REFERENCES species (id),
   vets INT REFERENCES vets (id)
 );
+
+-- Add primary key to animals table
+ALTER TABLE animals
+  ADD PRIMARY KEY (id);
