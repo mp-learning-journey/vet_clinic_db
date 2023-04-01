@@ -49,6 +49,7 @@ VALUES ('William Tatcher', 45, 'Apr 23, 2000'),
 
 -- insert data into the specializations table
 INSERT INTO specializations (vets, species) VALUES (1, 1),
+(3, 1),
 (3, 2),
 (4, 2);
 
